@@ -1,7 +1,6 @@
 import tkinter as tk
 import serial
 from serial.tools import list_ports
-from threading import Thread
 import pandas as pd
 
 class Ser():
@@ -176,7 +175,7 @@ class App(tk.Frame):
         recvData = self.ser.readSerial()
         if(recvData != None):
             # Data Parser
-            self.dataVarNames = ["dist", "targetANG", "targetRPM", "currANG"]
+            self.dataVarNames = ["dist", "targetANG", "targetRPM"]
             self.data = recvData.split()
             temp = ""
             for i in range(len(self.data)):
